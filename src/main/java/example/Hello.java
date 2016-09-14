@@ -7,7 +7,7 @@ public class Hello implements RequestHandler<String, String> {
 
 	@Override
 	public String handleRequest(String input, Context context) {
-		return "Hello2 " + input;
+		return "Hello3 " + input;
 	}
 
 }
