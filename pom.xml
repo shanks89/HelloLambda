@@ -9,6 +9,20 @@
 		<maven.compiler.source>1.8</maven.compiler.source>
 		<maven.compiler.target>1.8</maven.compiler.target>
 	</properties>
+
+	<distributionManagement>
+    <snapshotRepository>
+      <id>aws-snapshot</id>
+			<name>AWS Snapshot Repository</name>
+      <url>s3://maven.aws.lambda.poc/snapshot</url>
+    </snapshotRepository>
+    <repository>
+      <id>aws-release</id>
+			<name>AWS Release Repository</name>
+      <url>s3://maven.aws.lambda.poc/release</url>
+    </repository>
+  </distributionManagement>
+
 	<dependencies>
 		<dependency>
 			<groupId>com.amazonaws</groupId>
@@ -40,5 +54,12 @@
 				</executions>
 			</plugin>
 		</plugins>
+		 <extensions>
+			 <extension>
+				 <groupId>org.springframework.build</groupId>
+				 <artifactId>aws-maven</artifactId>
+				 <version>5.0.0.RELEASE</version>
+			 </extension>
+		 </extensions>
 	</build>
 </project>
